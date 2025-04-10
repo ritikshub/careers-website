@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <style>
+        h1 {
+            font-size: 40px;
+            font-family: Roboto;
+            font-weight: normal;
+            color: rgb(99, 99, 99);
+            text-align: center;
+        }
+        #banner {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <div  class="container">
+        <h1 class="text-center mt-2 mb-4">Company Career Page</h1>
+        <img id="banner" class="img-fluid" src="{{ url_for('static', filename='career.jpg') }}"  alt="Website Banner" height="400">
+        <h2>About the Company</h2>
+        <p class="lead">
+            Discover Your Path.
+            Whether you're just starting out or planning your next big move, we've got the tools and guidance you need.
+            Explore careers that match your skills, passions, and goals. From resume building to interview prep, we help you stand out.
+            Get access to expert insights and real-world advice.Start building a career, not just a job.
+            Your future begins here — let’s make it happen.
+        </p>
+        <h2 class="text-center">Open Positions</h2>
+        <div class="col-9" row>
+
+            {% for job in JOBS %}
+            
+                {% include 'jobitem.html' %}
+
+            {% endfor%}
+
+        </div>
+
+
+        <div class="text-center">
+            <button class="btn btn-primary btn-lg">Contact Us</button>
+        </div>
+        
+    </div>
+</body>
+</html>
