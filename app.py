@@ -31,7 +31,7 @@ JOBS = [
         'location': 'Delhi',
         'salary': 'Rs.10,000,00'
 
-    },
+    }
 ]
 
 @app.route("/")
